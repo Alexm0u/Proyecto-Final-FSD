@@ -13,13 +13,19 @@ module.exports = {
         type: Sequelize.STRING
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+            unique: true,
+            allowNull: false,
+            require: true
       },
       phone: {
         type: Sequelize.INTEGER
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+                unique: true,
+                allowNull: false,
+                require: true
       },
       password: {
         type: Sequelize.STRING
@@ -28,7 +34,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       role_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+            references: {
+            model: "Roles",
+            key: "id"
+            }
       },
       createdAt: {
         allowNull: false,
