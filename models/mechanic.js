@@ -10,9 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      mechanic.belongsTo(
+        models.User,{
+          foreignKey: 'user_id'
+    })
   }
+}
   mechanic.init({
     user_id: DataTypes.INTEGER,
     speciality: DataTypes.STRING
