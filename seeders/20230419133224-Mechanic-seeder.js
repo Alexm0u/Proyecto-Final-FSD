@@ -3,18 +3,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    const doctors = [];
+    const mechanics = [];
     mechanics.push({
     id: 1,
     user_id: 1,
-    specialty: "Bikes",
+    speciality: "Bikes",
     createdAt: new Date(),
     updatedAt: new Date(),
     });
     mechanics.push({
     id: 2,
     user_id: 2,
-    specialty: "Scooters",
+    speciality: "Scooters",
     createdAt: new Date(),
     updatedAt: new Date(),
     });

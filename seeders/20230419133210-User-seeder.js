@@ -1,5 +1,14 @@
 'use strict';
 
+const bcrypt = require("bcrypt");
+const password1 = "123";
+const password2 = "456";
+const password3 = "123456";
+const password4 = bcrypt.hashSync(password1, 10);
+const password5 = bcrypt.hashSync(password2, 10);
+const password6 = bcrypt.hashSync(password3, 10);
+
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -10,7 +19,7 @@ module.exports = {
     name: 'Miguel Herranz',
     phone: 617301369,
     email: 'miguel@gmail.com',
-    password: Miguel1234,
+    password: password4,
     comments: 'Empty Field',
     role_id: 2,
     createdAt: new Date(),
@@ -22,7 +31,7 @@ module.exports = {
       name: 'Jose Miguel Camps',
       phone: 637223858,
       email: 'josemiguel@gmail.com',
-      password: Josemiguel1234,
+      password: password4,
       comments: 'Empty Field',
       role_id: 2,
       createdAt: new Date(),
@@ -34,8 +43,8 @@ module.exports = {
     name: 'Carmen Piquer',
     phone: 610247149,
     email: 'carmen@gmail.com',
-    password: Carmen1234,
-    comments: 'Empy field',
+    password: password5,
+    comments: 'Empty field',
     role_id: 1,
     createdAt: new Date(),
     updatedAt: new Date()
@@ -46,8 +55,8 @@ module.exports = {
       name: 'Alexander Moya',
       phone: 648140627,
       email: 'alex@gmail.com',
-      password: Alexander1234,
-      comments: 'Empy field',
+      password: password6,
+      comments: 'Empty field',
       role_id: 3,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -58,8 +67,8 @@ module.exports = {
         name: 'Elsa Tejero',
         phone: 612345678,
         email: 'elsa@gmail.com',
-        password: Elsa1234,
-        comments: 'Empy field',
+        password: password5,
+        comments: 'Empty field',
         role_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
