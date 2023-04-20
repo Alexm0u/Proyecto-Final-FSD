@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
             through: 'Appointment',
             foreignKey: 'service_id',
             constraints: false,
-            // as: "citas"
         })
       }
     }

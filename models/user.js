@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             models.Role,{
             foreignKey: 'role_id'
             })
-        User.hasOne(models.Doctor, {
+        User.hasOne(models.Mechanic, {
             foreignKey: 'user_id'
         });
         User.belongsToMany(

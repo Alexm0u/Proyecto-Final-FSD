@@ -10,14 +10,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       service_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+            references: {
+            model: "Services",
+            key:"id"
+            }
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+            references: {
+            model: "Users",
+            key:"id"
+            }
       },
-      comment: {
-        type: Sequelize.STRING
-      },
+      mechanic_id: {
+        type: Sequelize.INTEGER,
+        references: {
+        model: "Mechanics",
+        key:"id"
+        }
+    },
+    date: {
+      type: Sequelize.DATE,
+      allowNull: false,
+      require: true
+  },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -29,6 +46,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('appointments');
+    await queryInterface.dropTable('Appointments');
   }
 };
