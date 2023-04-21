@@ -8,7 +8,7 @@ appointmentController.newAppointment = async (req, res) => {
             service_id: service_id,
             user_id: req.userId,
             mechanic_id: mechanic_id,
-            date: date
+            date: date,
         }
         const appointments = await Appointment.create(newAppointment)
         return res.json(appointments)
