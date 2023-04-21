@@ -10,6 +10,7 @@ userController.newUser = async (req, res) => {
       name: name,
       email: email,
       password: encryptedPassword,
+      role_id: 1
     };
     const users = await User.create(user);
     return res.json(users);
