@@ -1,13 +1,15 @@
 const { User } = require("../models/index");
 const userController = {};
+const bcrypt = require('bcrypt');
 
 userController.newUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
+    const encryptedPassword = bcrypt.hashSync(password, 10);
     const user = {
       name: name,
       email: email,
-      password: password,
+      password: encryptedPassword,
     };
     const users = await User.create(user);
     return res.json(users);
