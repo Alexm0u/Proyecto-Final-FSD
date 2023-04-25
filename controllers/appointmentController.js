@@ -80,9 +80,9 @@ appointmentController.getAllAppointment = async (req, res) => {
         let citasActivas = await Appointment.findAll({
             include: {
             model: User,
-            attributes: ['fullName','role_id','phone'],
+            attributes: ['name','role_id','phone'],
             },
-            attributes: ['service_id', 'user_id', "doctor_id", "payment", "date"]
+            attributes: ['service_id', 'user_id', "mechanic_id", "date"]
         });
             res.status(200).json({
             message: `These are all the appointment in the calendar`,
@@ -98,7 +98,7 @@ appointmentController.getAllAppointment = async (req, res) => {
 }
 
 
-appointmentController.showAppointmeasUser = async (req, res) => {
+appointmentController.showAppointmentasUser = async (req, res) => {
     try {
         const userCitas = await Appointment.findAll(
             {
@@ -115,7 +115,7 @@ appointmentController.showAppointmeasUser = async (req, res) => {
                     },
                 ],
                 attributes: {
-                    exclude: ["user_id", "doctor_id", "service_id"]
+                    exclude: ["user_id", "mechanic_id", "service_id"]
                 }
             }
         )
@@ -148,20 +148,20 @@ appointmentController.deleteAllAppointment = async (req, res) => {
     }
 }
 
-appointmentController.getMyAppointmentsAsDoctor = async (req, res) => {
+appointmentController.getMyAppointmentsAsMechanic = async (req, res) => {
     try {
-        const doctorId= req.userId;
+        const mechanicId= req.userId;
         const appointments = await Appointment.findAll(
             {
                 where: {
-                    id: doctorId
+                    id: mechanicId
                 },
             },
         );
         return res.json(
             {
             success: true,
-            message: "Succesfully recovered my appointment as a Doctor",
+            message: "Succesfully recovered my appointment as Mechanic",
             data: appointments
             });
     } catch (error) {
