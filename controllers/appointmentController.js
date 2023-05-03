@@ -23,11 +23,11 @@ appointmentController.newAppointment = async (req, res) => {
 
 appointmentController.updateAppointment = async (req, res) => {
     try {
-        const actualizar = req.body;
+        const { date } = req.body;
         const userId = req.userId
         const appointmentId = req.params.id;
         const appointmentupdated = await Appointment.update(
-            { actualizar: actualizar},
+            { date: date},
             {
             where: {
                 id: appointmentId, 
@@ -37,7 +37,9 @@ appointmentController.updateAppointment = async (req, res) => {
         );
         console.log(appointmentupdated) 
         res.json({
-            message: "Updated succesfully",
+            success: true,
+            message: "Actualización hecha correctamente",
+            data: appointmentupdated,
         });
     } catch (error) {
         return res.status(500).json({
