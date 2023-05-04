@@ -4,11 +4,12 @@ const bcrypt = require('bcrypt');
 
 userController.newUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, phone, password } = req.body;
     const encryptedPassword = bcrypt.hashSync(password, 10);
     const user = {
       name: name,
       email: email,
+      phone: phone,
       password: encryptedPassword,
       role_id: 1
     };
@@ -26,14 +27,13 @@ userController.getAllUser = async (req, res) => {
 
 userController.updateUser = async (req, res) => {
   try {
-      const { dni, name, phone, email, password } = req.body;
+      const { name, phone, email, password } = req.body;
       const userId = req.userId
 
       const encryptedPassword = bcrypt.hashSync(password, 10);
 
       const updateUser = await User.update(
           {
-              dni, 
               name, 
               phone, 
               email, 
