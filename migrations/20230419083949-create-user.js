@@ -19,7 +19,7 @@ module.exports = {
             require: true
       },
       phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
       },
       email: {
         type: Sequelize.STRING,

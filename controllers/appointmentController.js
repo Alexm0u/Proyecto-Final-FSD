@@ -87,7 +87,7 @@ appointmentController.getAllAppointment = async (req, res) => {
             attributes: ['service_id', 'user_id', "mechanic_id", "date"]
         });
             res.status(200).json({
-            message: `These are all the appointment in the calendar`,
+            message: `Estas son todas las citas programadas`,
             citasActivas,
         });   
     } catch (error) {
