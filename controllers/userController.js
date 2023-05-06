@@ -69,6 +69,49 @@ userController.updateUser = async (req, res) => {
       )
   }
 }
+userController.updateUserAsAdmin = async (req, res) => {
+    try {
+        const { name, phone, role_id } = req.body;
+        const userId = req.params.id
+  
+
+  
+        const updateUser = await User.update(
+            {
+                name, 
+                phone, 
+                role_id,
+            },
+            {
+                where: {
+                    id: userId
+                }
+            }
+        );
+  
+        if (!updateUser) {
+            return res.send({
+                success: false,
+                message: "No se ha podido actualizar",
+                error_message: error.message
+            })
+        }
+  
+        return res.send({
+            success: true,
+            message: "Actualizado correctamente",
+            updateUser: updateUser
+        })
+    } catch (error) {
+        return res.status(500).json(
+            {
+                success: false,
+                message: "Somenthing went wrong",
+                error_message: error.message
+            }
+        )
+    }
+  }
 
 userController.findAllUsersMechanic = async (req, res) => {
   try {
