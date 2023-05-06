@@ -42,7 +42,7 @@ Used tech:
 
 
 ## Diagram
-<!-- ![image](https://user-images.githubusercontent.com/121814511/222975585-e33b1ecd-fc84-4b23-83bd-6e77fd566c60.png) -->
+![relaciones base de datos](https://user-images.githubusercontent.com/121814511/236610424-6bb77827-426e-4a48-875f-b70b0d828934.PNG)
 
 ## Installation
 1. Clone repository.
@@ -219,3 +219,4 @@ This project it's under licence of Àlex Moya Camps.
 <a href = "mailto:alex.moyacamps@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <a href="https://www.linkedin.com/in/alejandro-moya-camps-5448a477/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </p>
+
