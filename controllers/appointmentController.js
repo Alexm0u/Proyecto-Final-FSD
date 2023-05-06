@@ -20,6 +20,32 @@ appointmentController.newAppointment = async (req, res) => {
         })
     }
 }
+appointmentController.updateAppointmentAsAdmin = async (req, res) => {
+    try {
+        const { date } = req.body;
+        const appointmentId = req.params.id;
+        const appointmentupdated = await Appointment.update(
+            { date: date},
+            {
+            where: {
+                id: appointmentId, 
+            },
+            }
+        );
+        console.log(appointmentupdated) 
+        res.json({
+            success: true,
+            message: "Actualización hecha correctamente",
+            data: appointmentupdated,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Something went wrong",
+            error: error.message
+        })
+    }
+}
 
 appointmentController.updateAppointment = async (req, res) => {
     try {
@@ -84,7 +110,7 @@ appointmentController.getAllAppointment = async (req, res) => {
             model: User,
             attributes: ['name','role_id','phone'],
             },
-            attributes: ['service_id', 'user_id', "mechanic_id", "date"]
+            attributes: [ 'id','service_id', 'user_id', "mechanic_id", "date"]
         });
             res.status(200).json({
             message: `Estas son todas las citas programadas`,
