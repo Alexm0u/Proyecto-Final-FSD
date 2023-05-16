@@ -7,7 +7,7 @@ module.exports = {
         services.push({
         id: 1,
             servicename: 'Reparacion',
-            description: 'Repair bike or scooter',
+            description: 'Reparacion de bici o patinete',
             price: 30,
             duration: 70,
             createdAt: new Date(),
@@ -16,7 +16,7 @@ module.exports = {
         services.push({
             id: 2,
             servicename: 'Revision',
-            description: 'Total revision of your bike or scooter to find some issues',
+            description: 'Revision total para encontrar posibles problemas',
             price: 20,
             duration: 60,
             createdAt: new Date(),

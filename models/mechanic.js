@@ -6,14 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     class Mechanic extends Model {
         static associate(models) {
         // define association here
-        Mechanic.belongsTo(models.User);
-        Mechanic.hasMany(models.Appointment, {
-            foreignKey: 'mechanic_id',
-            constraints: false,
-        });
+        Mechanic.belongsTo(models.User,{foreignKey:"user_id"}),
+        
         Mechanic.belongsTo(models.Service, {
             through: "Appointment",
-            foreignKey: "mechanic_id",
+            foreignKey: "id",
             constraints: false,
         })
         }
