@@ -7,14 +7,14 @@ module.exports = {
     mechanics.push({
     id: 1,
     user_id: 1,
-    speciality: "Bikes",
+    speciality: "Bicis",
     createdAt: new Date(),
     updatedAt: new Date(),
     });
     mechanics.push({
     id: 2,
     user_id: 2,
-    speciality: "Scooters",
+    speciality: "Patinete",
     createdAt: new Date(),
     updatedAt: new Date(),
     });

@@ -6,7 +6,7 @@ module.exports = {
     const services = []
         services.push({
         id: 1,
-            servicename: 'Repair',
+            servicename: 'Reparacion',
             description: 'Repair bike or scooter',
             price: 30,
             duration: 70,
@@ -15,7 +15,7 @@ module.exports = {
         })
         services.push({
             id: 2,
-            servicename: 'Mechanical revision',
+            servicename: 'Revision',
             description: 'Total revision of your bike or scooter to find some issues',
             price: 20,
             duration: 60,
