@@ -125,6 +125,23 @@ appointmentController.getAllAppointment = async (req, res) => {
     }
 }
 
+appointmentController.getMechanics = async (req, res) => {
+    try {
+        let resp = await Mechanic.findAll()
+        return res.send(resp)
+    } catch (err) {
+        return res.send(err)
+    }
+}
+
+appointmentController.getServices = async (req, res) => {
+    try {
+        let resp = await Service.findAll()
+        return res.send(resp)
+    } catch (err) {
+        return res.send(err)
+    }
+}
 
 appointmentController.showAppointmentasUser = async (req, res) => {
     try {

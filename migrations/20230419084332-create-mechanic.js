@@ -16,7 +16,7 @@ module.exports = {
             key:"id"
             }
       },
-      speciality: {
+      specialty: {
         type: Sequelize.STRING
       },
       createdAt: {

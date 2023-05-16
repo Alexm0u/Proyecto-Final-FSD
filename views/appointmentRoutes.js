@@ -12,6 +12,8 @@ router.get('/appointment/:id',verifyToken,isStaff, appointmentController.showApp
 router.get('/appointments',verifyToken,isAdmin, appointmentController.getAllAppointment);
 router.delete('/appointment/deleteall',verifyToken,appointmentController.deleteAllAppointment);  
 router.get('/appointmentAsMechanic', verifyToken, isStaff, appointmentController.getMyAppointmentsAsMechanic);
+router.get('/appointmentMech', appointmentController.getMechanics);  
+router.get('/appointmentServ', appointmentController.getServices);  
 
 module.exports = router;
 
