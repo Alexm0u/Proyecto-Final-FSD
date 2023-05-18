@@ -25,6 +25,7 @@ userController.getAllUser = async (req, res) => {
   return res.json(users);
 };
 
+
 userController.updateUser = async (req, res) => {
   try {
       const { name, phone, email, password } = req.body;

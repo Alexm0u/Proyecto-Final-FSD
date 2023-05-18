@@ -1,5 +1,6 @@
-const { User } = require("../models/index");
+const { User, Role } = require("../models/index");
 const bcrypt = require('bcrypt');
+const role = require("../models/role");
 const roleController = {};
 
 roleController.newRole = async (req, res) => {
@@ -28,5 +29,9 @@ roleController.newRole = async (req, res) => {
         })
     }
 }
+roleController.getAllRoles = async (req, res) => {
+    const roles = await Role.findAll();
+    return res.json(roles);
+  };
 
 module.exports = roleController;
