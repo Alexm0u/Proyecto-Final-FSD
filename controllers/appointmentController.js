@@ -22,10 +22,12 @@ appointmentController.newAppointment = async (req, res) => {
 }
 appointmentController.updateAppointmentAsAdmin = async (req, res) => {
     try {
-        const { date } = req.body;
+        const  cita  = req.body;
         const appointmentId = req.params.id;
         const appointmentupdated = await Appointment.update(
-            { date: date},
+            { date: cita.date,
+                mechanic_id: cita.mechanic_id,
+                service_id: cita.service_id,},
             {
             where: {
                 id: appointmentId, 
@@ -49,11 +51,13 @@ appointmentController.updateAppointmentAsAdmin = async (req, res) => {
 
 appointmentController.updateAppointment = async (req, res) => {
     try {
-        const { date } = req.body;
+        const  cita  = req.body;
         const userId = req.userId
         const appointmentId = req.params.id;
         const appointmentupdated = await Appointment.update(
-            { date: date},
+            { date: cita.date,
+                mechanic_id: cita.mechanic_id,
+                service_id: cita.service_id,},
             {
             where: {
                 id: appointmentId, 
